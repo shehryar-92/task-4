@@ -1,1 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World Clock</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <main class="page">
+    <header class="page-header">
+      <h1>World Clock</h1>
+      <p class="subtitle">Compare times across cities, live.</p>
+    </header>
+
+    <section class="add-city">
+      <label for="city-search" class="visually-hidden">Add a city</label>
+      <input
+        type="text"
+        id="city-search"
+        placeholder="Add a city or timezone…"
+        autocomplete="off"
+      />
+      <ul id="city-suggestions" class="suggestions" hidden></ul>
+    </section>
+
+    <section aria-label="Your clocks">
+      <ul id="clock-list" class="clock-list">
+        <!-- Clock cards are inserted here by app.js -->
+      </ul>
+
+      <p id="empty-state" class="empty-state">
+        No cities added yet. Search above to add your first one.
+      </p>
+    </section>
+  </main>
+
+  <template id="clock-card-template">
+    <li class="clock-card" data-timezone="">
+      <div class="clock-card-main">
+        <p class="city-name"></p>
+        <p class="time" aria-live="off"></p>
+        <p class="date"></p>
+      </div>
+      <button class="remove-btn" type="button" aria-label="Remove city">✕</button>
+    </li>
+  </template>
+
+  <script src="helpers.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
 
